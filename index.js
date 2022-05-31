@@ -16,26 +16,6 @@ const prime = (date) => {
     return date > 1;
 }
 
-const getMinIndex = (arr, i, l) => {
-    let min_index = i;
-    let min_val = Number.MAX_SAFE_INTEGER;
-    for (let j = i; j <= l; j++) {
-        if (arr[j] < min_val) {
-            min_val = arr[j]
-            min_index = j;
-        };
-    }
-    return min_index;
-}
-const reverse = (arr, i, j) => {
-    let mid = parseInt(i + j) / 2;
-    for (let k = 0; k <= mid; k++) {
-        let temp = arr[k];
-        arr[k] = arr[j - k];
-        arr[j - k] = temp;
-    }
-    return arr;
-}
 
 app.get('/getData', async (req, res) => {
     let get_date = new Date();
