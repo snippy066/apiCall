@@ -36,21 +36,6 @@ const reverse = (arr, i, j) => {
     }
     return arr;
 }
-app.get('/sworks', async (req, res) => {
-    let { arr } = req.body;
-    let count = 0;
-    if (Array.isArray(arr)) {
-        let l = arr.length;
-        for (let i = 0; i < l - 1; i++) {
-            let minIndex = getMinIndex(arr, i, l - 1);
-            count += minIndex - i + 1;
-            arr = reverse(arr, i, minIndex);
-        }
-        res.status(200).send({ totalCost: count });
-    } else {
-        res.status(422).send({ error: "Today's Date is not Prime" })
-    }
-})
 
 app.get('/getData', async (req, res) => {
     let get_date = new Date();
